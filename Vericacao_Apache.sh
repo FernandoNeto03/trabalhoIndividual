@@ -16,3 +16,10 @@ fi
 
 #Resposta completa com informações
 resposta_Log="\nHora Atual: ${horarioAtual} \nStatus do Apache: ${status_Servidor} ${mensagem_Personalizada}"
+
+#Gerando os arquivos de saída
+if [ "${status_Servidor}"=="online" ];then
+        echo "${resposta_Log}" >> /efs/fernando/Servidor_online.log
+else
+        echo "${resposta_Log}" >> /efs/fernando/Servidor_offline.log
+fi
