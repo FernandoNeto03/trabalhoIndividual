@@ -51,6 +51,7 @@
 4. Para dar a permissão correta, execute `sudo chmod +x Verificacao_Apache.sh`;
 5. Devemos colocar nosso cript em uma função de loop para a execução de 5 em 5 minutos do mesmo, utilizando a função do pacote `crond`, o qual ja vem instalado por padrão. Para isso, utilizaremos o comando `crontab -e`. Dentro do arquivo aberto, colocaremos a seguinte linha: `*/5 * * * *  bash /home/efs/Verificacao_Apache.sh`,
 onde cada asterísco representa uma medida de tempo, sendo assim, respectivamente, _minuto, hora, dia do mês, mês, dia da semana_.
+6. Para garantir uma comunicação segura, é necessário instalar o SSL (Secure Sockets Layer) com o comando `sudo yum install -y mod_ssl`. Após instalação, reincie o sistema SSL com o comando `sudo service httpd restart`.
 
 
 
