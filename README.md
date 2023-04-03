@@ -13,11 +13,9 @@
 
 **Portas liberadas no Security Group:**
 * _**22/TCP - SSH**_
-* _**111/TCP**_ **- Usado para mapear portas RPC não registradas**
-* _**111/UDP**_ **- Usado para mapear portas RPC não registradas**
-* _**2049/TCP - NFS**_
-* _**2049/UDP - NFS**_
 * _**80/TCP - HTTP**_
+* _**111 TCP/UDP**_ **- Usado para mapear portas RPC não registradas**
+* _**2049 TCP/UDP - NFS**_
 * _**443/TCP - HTTPS**_
  
 - **Par de Chaves:**
