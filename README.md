@@ -49,8 +49,9 @@
 
 1. Acesse o diretório root com `/efs` e crie o script `Verificacao_Apache.sh`;
 2. Para que o EFS monte automaticamente quando inicializar a instância, sem precisar refazê-lo sempre, é necessário colocá-lo no arquivo fstab. Abra o arquivo `/etc/fstab` com a função de edição de texto executando o comando `sudo vi /etc/fstab` e inserindo o comando `fs-XXXXXXXX:/ /efs efs defaults,_netdev 0 0` em uma nova linha;
-3. Para dar a permissão correta, execute `sudo chmod +x Verificacao_Apache.sh`;
-4. Devemos colocar nosso cript em uma função de loop para a execução de 5 em 5 minutos do mesmo, utilizando a função do pacote `crond`, o qual ja vem instalado por padrão. Para isso, utilizaremos o comando `crontab -e`. Dentro do arquivo aberto, colocaremos a seguinte linha: `*/5 * * * *  bash /home/efs/Verificacao_Apache.sh`,
+3. Podemos fazer a verificação se o EFS está montado corretamente, utilizando o comando `df -h` e encontrando o volume do mesmo.
+4. Para dar a permissão correta, execute `sudo chmod +x Verificacao_Apache.sh`;
+5. Devemos colocar nosso cript em uma função de loop para a execução de 5 em 5 minutos do mesmo, utilizando a função do pacote `crond`, o qual ja vem instalado por padrão. Para isso, utilizaremos o comando `crontab -e`. Dentro do arquivo aberto, colocaremos a seguinte linha: `*/5 * * * *  bash /home/efs/Verificacao_Apache.sh`,
 onde cada asterísco representa uma medida de tempo, sendo assim, respectivamente, _minuto, hora, dia do mês, mês, dia da semana_.
 
 
